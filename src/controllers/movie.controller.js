@@ -17,8 +17,10 @@ export async function searchMovies(req, res) {
     const similarity = cosineSimilarity(queryEmbedding, movie.embedding);
 
     results.push({
-      movie: movie,
-      similarity: similarity,
+      id: movie.id,
+      name: movie.name,
+      description: movie.description,
+      similarity,
     });
   }
 
@@ -55,8 +57,10 @@ export function recommendMovies(req, res) {
     );
 
     results.push({
-      movie: movie,
-      similarity: similarity,
+      id: movie.id,
+      name: movie.name,
+      description: movie.description,
+      similarity,
     });
   }
 
