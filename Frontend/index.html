@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>MovieMind — AI Movie Recommendations</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- Background -->
+    <div class="background-glow"></div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="logo">
+        <span class="logo-icon">M</span>
+        <span>MovieMind</span>
+      </div>
+
+      <div class="nav-info">
+        <span class="ai-dot"></span>
+        AI Powered
+      </div>
+    </nav>
+
+    <!-- Hero -->
+    <main>
+      <section class="hero">
+        <div class="hero-content">
+          <span class="eyebrow">SEMANTIC MOVIE DISCOVERY</span>
+
+          <h1>
+            Find movies you'll
+            <span>actually love.</span>
+          </h1>
+
+          <p>
+            Search by meaning, story, or mood. Our AI compares movie embeddings
+            to discover films that match your interests.
+          </p>
+
+          <!-- Search -->
+          <div class="search-wrapper">
+            <span class="search-icon">⌕</span>
+
+            <input
+              id="searchInput"
+              type="text"
+              placeholder="Search movies, stories, themes..."
+              autocomplete="off"
+            />
+
+            <button id="searchButton">Search</button>
+          </div>
+
+          <div class="search-hints">
+            <span>Try:</span>
+            <button class="hint">dreams</button>
+            <button class="hint">space exploration</button>
+            <button class="hint">psychological thriller</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Search Results -->
+      <section class="section">
+        <div class="section-header">
+          <div>
+            <span class="section-label">DISCOVER</span>
+            <h2 id="resultsTitle">Search results</h2>
+          </div>
+
+          <span id="resultCount" class="result-count"></span>
+        </div>
+
+        <div id="loading" class="loading hidden">
+          <div class="spinner"></div>
+          <span>Finding similar movies...</span>
+        </div>
+
+        <div id="emptyState" class="empty-state">
+          <div class="empty-icon">◈</div>
+          <h3>Search for a movie</h3>
+          <p>Enter a movie name, story, genre, theme, or even a sentence.</p>
+        </div>
+
+        <div id="movieGrid" class="movie-grid"></div>
+      </section>
+
+      <!-- Recommendations -->
+      <section
+        id="recommendationSection"
+        class="section recommendation-section hidden"
+      >
+        <div class="section-header">
+          <div>
+            <span class="section-label">AI RECOMMENDATIONS</span>
+            <h2 id="recommendationTitle">Recommended for you</h2>
+          </div>
+
+          <span class="recommendation-info">
+            Based on semantic similarity
+          </span>
+        </div>
+
+        <div id="recommendationLoading" class="loading hidden">
+          <div class="spinner"></div>
+          <span>Finding similar movies...</span>
+        </div>
+
+        <div id="recommendationGrid" class="movie-grid"></div>
+      </section>
+    </main>
+
+    <footer>
+      <p>MovieMind · Powered by embeddings & cosine similarity</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
